@@ -1,4 +1,4 @@
-package com.cihan.emlak.models;
+package com.cihan.estate.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

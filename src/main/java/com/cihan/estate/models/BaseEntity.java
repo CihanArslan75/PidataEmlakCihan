@@ -1,4 +1,4 @@
-package com.cihan.emlak.models;
+package com.cihan.estate.models;
 
 import java.util.Date;
 import javax.persistence.Column;

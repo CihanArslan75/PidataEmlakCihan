@@ -1,4 +1,4 @@
-package com.cihan.emlak.models;
+package com.cihan.estate.models;
 
 public enum EstateType {
 	KONUT ,
