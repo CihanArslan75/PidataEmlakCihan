@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,8 +26,8 @@ public class Estate extends BaseEntity{
 	private DeedType deedType ; //(KAT MULKIYETI 0,KAT IRTIFAKI 1,TAPUSUZ 2)  ENUM 
 	private State elevator  ; // (VAR , YOK) ENUM
 	private String address  ;
-	private int province;
-	private int district ;
+	private Provinces province;
+	private Districts district ;
 	private String  coordinateX  ;
 	private String coordinateY;
 	private BuildingType  buildingType;  // (BETONARME 0,KARKAS 1, AHŞAP 2 ),  ENUM
@@ -40,14 +42,16 @@ public class Estate extends BaseEntity{
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	@ManyToOne
+	@JoinColumn(name = "agentid", referencedColumnName = "id")
 	public RealEstateAgent getRealEstateAgent() {
 		return realEstateAgent;
 	}
 	public void setRealEstateAgent(RealEstateAgent realEstateAgent) {
 		this.realEstateAgent = realEstateAgent;
 	}
-	
+	@ManyToOne
+	@JoinColumn(name = "customerid", referencedColumnName = "id")
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -68,21 +72,21 @@ public class Estate extends BaseEntity{
 	public void setEstateState(EstateState estateState) {
 		this.estateState = estateState;
 	}
-	
+	@Column(name = "size")
 	public int getSize() {
 		return size;
 	}
 	public void setSize(int size) {
 		this.size = size;
 	}
-	
+	@Column(length = 50, name = "roomNumber")
 	public String getRoomNumber() {
 		return roomNumber;
 	}
 	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
 	}
-	
+	@Column(length = 20, name = "roomNumber")
 	public String getFloor() {
 		return floor;
 	}
@@ -103,56 +107,58 @@ public class Estate extends BaseEntity{
 	public void setDeedType(DeedType deedType) {
 		this.deedType = deedType;
 	}
-	
+	@Column(name = "elevator")
 	public State getElevator() {
 		return elevator;
 	}
 	public void setElevator(State elevator) {
 		this.elevator = elevator;
 	}
-	
+	@Column(length = 1000, name = "address")
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	public int getProvince() {
+	@ManyToOne
+	@JoinColumn(name = "provinceid", referencedColumnName = "id")
+	public Provinces getProvince() {
 		return province;
 	}
-	public void setProvince(int province) {
+	public void setProvince(Provinces province) {
 		this.province = province;
 	}
-	
-	public int getDistrict() {
+	@ManyToOne
+	@JoinColumn(name = "districtid", referencedColumnName = "id")
+	public Districts getDistrict() {
 		return district;
 	}
-	public void setDistrict(int district) {
+	public void setDistrict(Districts district) {
 		this.district = district;
 	}
-	
+	@Column(length = 20, name = "coordinatex")
 	public String getCoordinateX() {
 		return coordinateX;
 	}
 	public void setCoordinateX(String coordinateX) {
 		this.coordinateX = coordinateX;
 	}
-	
+	@Column(length = 20, name = "coordinatey")
 	public String getCoordinateY() {
 		return coordinateY;
 	}
 	public void setCoordinateY(String coordinateY) {
 		this.coordinateY = coordinateY;
 	}
-	
+	@Column(name = "buildingtype")
 	public BuildingType getBuildingType() {
 		return buildingType;
 	}
 	public void setBuildingType(BuildingType buildingType) {
 		this.buildingType = buildingType;
 	}
-	
+	@Column(length = 50, name = "buildingage")
 	public String getBuildingAge() {
 		return buildingAge;
 	}

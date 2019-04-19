@@ -12,15 +12,15 @@ import javax.persistence.Table;
 @Table(name = "realestateagent")
 public class RealEstateAgent  extends BaseEntity {
 	private int id;
-	private String reaName  ;
+	private String agentName  ;
 	private String ownerNameSurname ;
 	private String address;
 	private String mobilePhone ;
 	private String fax  ;
 	
 	@Id
-	@SequenceGenerator(name = "seq_rea", allocationSize = 1, sequenceName = "seq_rea")
-	@GeneratedValue(generator = "seq_rea", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq_agent", allocationSize = 1, sequenceName = "seq_agent")
+	@GeneratedValue(generator = "seq_agent", strategy = GenerationType.SEQUENCE)
 	public int getId() {
 		return id;
 	}
@@ -28,12 +28,12 @@ public class RealEstateAgent  extends BaseEntity {
 		this.id = id;
 	}
 	
-	@Column(length = 250, name = "reaname")
-	public String getReaName() {
-		return reaName;
+	@Column(length = 250, name = "agentname")
+	public String getAgentName() {
+		return agentName;
 	}
-	public void setReaName(String reaName) {
-		this.reaName = reaName;
+	public void setAgentName(String agentName) {
+		this.agentName = agentName;
 	}
 	
 	@Column(length = 200, name = "ownernamesurname")
