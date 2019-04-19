@@ -19,8 +19,8 @@ public class RealEstateAgent  extends BaseEntity {
 	private String fax  ;
 	
 	@Id
-	@SequenceGenerator(name = "seq_product", allocationSize = 1, sequenceName = "seq_product")
-	@GeneratedValue(generator = "seq_product", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq_rea", allocationSize = 1, sequenceName = "seq_rea")
+	@GeneratedValue(generator = "seq_rea", strategy = GenerationType.SEQUENCE)
 	public int getId() {
 		return id;
 	}
