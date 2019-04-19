@@ -10,12 +10,10 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>   
         
-        <mapping class="com.cihan.anket.models.Sektor"/>
-        <mapping class="com.cihan.anket.models.Meslek"/>
-        <mapping class="com.cihan.anket.models.IL"/>
-        <mapping class="com.cihan.anket.models.Ilce"/>
-        <mapping class="com.cihan.anket.models.Cevap"/> 
-        <mapping class="com.cihan.anket.models.CevapDetay"/> 
-        <mapping class="com.cihan.anket.models.Anket"/>
-        <mapping class="com.cihan.anket.models.AnketDetay"/>
-        <ma
+        <mapping class="com.cihan.estate.models.Estate"/>
+        <mapping class="com.cihan.estate.models.RealEstateAgent"/>
+        <mapping class="com.cihan.estate.models.Customer"/> 
+        <mapping class="com.cihan.estate.models.Provinces"/>
+        <mapping class="com.cihan.estate.models.Districts"/>
+    </session-factory>
+</hibernate-configuration>
