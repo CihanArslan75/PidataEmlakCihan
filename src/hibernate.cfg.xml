@@ -15,5 +15,6 @@
         <mapping class="com.cihan.estate.models.Customer"/> 
         <mapping class="com.cihan.estate.models.Provinces"/>
         <mapping class="com.cihan.estate.models.Districts"/>
+        <mapping class="com.cihan.estate.models.user.User"/>
     </session-factory>
 </hibernate-configuration>

@@ -18,23 +18,23 @@ public class HomeController {
 	public ModelAndView getOwnerName() {
 		ModelAndView mav= new ModelAndView();
 		mav.addObject("owner","Cihan Arslan");
-		mav.setViewName("index"); // sayfanÄ±n adÄ±
+		mav.setViewName("index"); // sayfanını adı
 		return mav;
 	}
 	@RequestMapping("/login")
 	@ResponseBody
-	public ModelAndView getOwnerName1() {
+	public ModelAndView getLogin() {
 		ModelAndView mav= new ModelAndView();
-		mav.addObject("owner","Cihan Arslan");
-		mav.setViewName("login"); // sayfanÄ±n adÄ±
+		mav.setViewName("login"); 
 		return mav;
 	}
+	
 	@RequestMapping("/anketgirisi")
 	@ResponseBody
 	public ModelAndView getOwnerName2() {
 		ModelAndView mav= new ModelAndView();
 		mav.addObject("owner","Cihan Arslan");
-		mav.setViewName("anketgirisi"); // sayfanÄ±n adÄ±
+		mav.setViewName("anketgirisi"); 
 		return mav;
 	}
 
