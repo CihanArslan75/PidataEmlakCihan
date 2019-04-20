@@ -25,8 +25,8 @@ public class User extends BaseEntity{
 	private Role role;
 		
 	@Id
-	@SequenceGenerator(name = "seq_user", allocationSize = 1, sequenceName = "seq_user")
-	@GeneratedValue(generator = "seq_user", strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "seq_usr", allocationSize = 1, sequenceName = "seq_usr")
+	@GeneratedValue(generator = "seq_usr", strategy = GenerationType.SEQUENCE)
 	public int getId() {
 		return id;
 	}

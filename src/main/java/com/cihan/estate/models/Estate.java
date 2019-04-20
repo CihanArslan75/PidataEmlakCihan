@@ -45,7 +45,7 @@ public class Estate extends BaseEntity{
 	public void setId(int id) {
 		this.id = id;
 	}
-	@ManyToMany
+	@ManyToMany  //bir emlak birden fazla emlakçıda olabilir.Bir emlakçının birden fazla ev ilanı olabilir.
 	@JoinColumn(name = "agentid", referencedColumnName = "id")
 	public RealEstateAgent getRealEstateAgent() {
 		return realEstateAgent;
@@ -53,7 +53,7 @@ public class Estate extends BaseEntity{
 	public void setRealEstateAgent(RealEstateAgent realEstateAgent) {
 		this.realEstateAgent = realEstateAgent;
 	}
-	@ManyToOne
+	@ManyToOne   //emlak çok müşteri tek . Bir müşterinin birden fazla evi olabilir.bir ev bir müşteriye ait olabilir
 	@JoinColumn(name = "customerid", referencedColumnName = "id")
 	public Customer getCustomer() {
 		return customer;
@@ -127,7 +127,7 @@ public class Estate extends BaseEntity{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	@ManyToOne
+	@ManyToOne  // birden çok emlak bir ile bağlanabilir.
 	@JoinColumn(name = "provinceid", referencedColumnName = "id")
 	public Provinces getProvince() {
 		return province;
@@ -135,7 +135,7 @@ public class Estate extends BaseEntity{
 	public void setProvince(Provinces province) {
 		this.province = province;
 	}
-	@ManyToOne
+	@ManyToOne // birden çok emlak bir ilçeye bağlanabilir.
 	@JoinColumn(name = "districtid", referencedColumnName = "id")
 	public Districts getDistrict() {
 		return district;

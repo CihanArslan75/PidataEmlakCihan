@@ -29,7 +29,7 @@ public class EstatePhoto {
 		this.id = id;
 	}
 	
-	@ManyToOne
+	@ManyToOne  //birden fazla photo bir emlağa bağlanabilir.bir emlağın birden fazla fotosu olabilir. Bir foto birden fazla emlağa bağlanamaz.
 	@JoinColumn(name = "estateid", referencedColumnName = "id")
 	public Estate getEstate() {
 		return estate;

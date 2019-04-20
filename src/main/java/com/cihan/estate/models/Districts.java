@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "districts")
+
 public class Districts {
 	private int id;
 	private int districtCode; 
