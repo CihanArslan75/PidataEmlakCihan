@@ -2,6 +2,7 @@ package com.cihan.estate.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 public class Customer extends BaseEntity{
 	private int id;
 	private String name ;
-	private String Surname;
+	private String surname;
 	private CustomerType customerType;
 	private String telephone ;
 	private String mobilephone ;
@@ -37,12 +38,13 @@ public class Customer extends BaseEntity{
 	}
 	@Column(length = 100, name = "surname")
 	public String getSurname() {
-		return Surname;
+		return surname;
 	}
 	public void setSurname(String surname) {
-		Surname = surname;
+		this.surname = surname;
 	}
 	@Column(name = "customertype")
+    @Enumerated
 	public CustomerType getCustomerType() {
 		return customerType;
 	}

@@ -2,6 +2,7 @@ package com.cihan.estate.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -61,6 +62,7 @@ public class Estate extends BaseEntity{
 		this.customer = customer;
 	}
 	@Column(name = "estatetype")
+    @Enumerated
 	public EstateType getEstateType() {
 		return estateType;
 	}
@@ -96,6 +98,7 @@ public class Estate extends BaseEntity{
 		this.floor = floor;
 	}
 	@Column(name = "warmingtype")
+    @Enumerated
 	public WarmingType getWarmingType() {
 		return warmingType;
 	}
@@ -103,6 +106,7 @@ public class Estate extends BaseEntity{
 		this.warmingType = warmingType;
 	}
 	@Column(name = "deedtype")
+    @Enumerated
 	public DeedType getDeedType() {
 		return deedType;
 	}
@@ -154,6 +158,7 @@ public class Estate extends BaseEntity{
 		this.coordinateY = coordinateY;
 	}
 	@Column(name = "buildingtype")
+    @Enumerated
 	public BuildingType getBuildingType() {
 		return buildingType;
 	}
