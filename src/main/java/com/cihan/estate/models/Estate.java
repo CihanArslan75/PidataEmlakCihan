@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -33,6 +34,7 @@ public class Estate extends BaseEntity{
 	private BuildingType  buildingType;  // (BETONARME 0,KARKAS 1, AHŞAP 2 ),  ENUM
 	private String  buildingAge ;
 	
+	
 	@Id
 	@SequenceGenerator(name = "seq_estate", allocationSize = 1, sequenceName = "seq_estate")
 	@GeneratedValue(generator = "seq_estate", strategy = GenerationType.SEQUENCE)
@@ -42,7 +44,7 @@ public class Estate extends BaseEntity{
 	public void setId(int id) {
 		this.id = id;
 	}
-	@ManyToOne
+	@ManyToMany
 	@JoinColumn(name = "agentid", referencedColumnName = "id")
 	public RealEstateAgent getRealEstateAgent() {
 		return realEstateAgent;
